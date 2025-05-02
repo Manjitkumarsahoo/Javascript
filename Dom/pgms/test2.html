@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+        }
+        div{
+            background-color: yellow;
+            color: red;
+            padding: 10px 10px;
+            text-align: center;
+        }
+        div>button{
+            padding: 10px 15px;
+        }
+        div>button:hover{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1 id="display-tag">Display Message</h1>
+        <button onclick="display()">Click Here</button>
+    </div>
+<script>
+    function display(){
+        let displayTag=document.getElementById('display-tag');
+        console.log(displayTag);
+        console.log(displayTag.textContent);
+        displayTag.textContent="This is First Message";
+        displayTag.style.color="blue";
+    }
+
+</script>
+</body>
+</html>

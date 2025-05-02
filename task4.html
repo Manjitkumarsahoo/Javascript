@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Expense Tracker</h1>
+        <form id="form">
+            <input type="text" id="input" >
+            <input type="number" id="price">
+            <select id="category" required>
+                <option value="Food">Food</option>
+                <option value="Health">Health</option>
+                <option value="Fashion">Fashion</option>
+                <option value="Travel">Travel</option>
+            </select>
+            <input type="date" id="date">
+            <button type="submit">Add Expense</button>
+        </form>
+
+        <div class="filter-section mt-4">
+            <button id="filter-btn" class="btn btn-primary mt-2">Filter</button>
+            <select id="filter-category" class="form-select" style="display: none;">
+                <option value="All">All</option>
+                <option value="Food">Food</option>
+                <option value="Health">Health</option>
+                <option value="Fashion">Fashion</option>
+                <option value="Travel">Travel</option>
+            </select>
+        </div>
+
+        <div class="expense-table">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Item Name</th>
+                        <th>Price</th>
+                        <th>Category</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody id="list"></tbody>
+            </table>
+            <button id="show-total">Show Total Expenses</button>
+            <p id="total-expenses">Total :₹0.00</p>
+        </div>
+    </div>
+
+    <script>
+        let form = document.getElementById('form');
+let list = document.getElementById('list');
+let input = document.getElementById('input');  
+let price = document.getElementById('price');
+let category = document.getElementById('category'); 
+let date = document.getElementById('date');
+let totalExpenses = document.getElementById('total-expenses')
+let showBtn = document.getElementById('show-total');
+let filterBtn = document.getElementById('filter-btn');
+let filterCategory = document.getElementById('filter-category');
+
+let items = [];
+
+filterBtn.addEventListener('click', function() {
+    filterCategory.style.display = filterCategory.style.display === 'none' ? 'block' : 'none';
+});
+
+filterCategory.addEventListener('change', function() {
+    let selectedCategory = filterCategory.value;
+    let filteredItems = selectedCategory === 'All' ? items : items.filter(item => item.category === selectedCategory);
+    display(filteredItems);
+});
+
+
+form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    let item = {
+        name: input.value,
+        price: parseFloat(price.value),
+        category: category.value,
+        date: date.value
+    };
+    items.push(item);
+    display(items);
+    form.reset();
+});
+
+function display(items) {
+    let totalItems = '';
+    items.forEach((item) => {
+        totalItems += ` 
+        <tr>
+            <td>${item.name}</td>
+            <td>₹${item.price.toFixed(2)}</td>
+            <td>${item.category}</td>
+            <td>${item.date}</td>
+        </tr>`;
+    });
+    document.getElementById('list').innerHTML = totalItems;
+}
+
+
+showBtn.addEventListener('click',function(){
+    let total = items.reduce((sum,item)=>sum + parseFloat(item.price),0);
+    totalExpenses.textContent = `₹${total.toFixed(2)}`;
+    
+})
+
+
+    </script>
+</body>
+</html>

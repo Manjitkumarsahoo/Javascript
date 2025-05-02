@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let t1={
+            travelName:"VPL",
+            busId:"VR101"
+        };
+
+        let t2={
+            travelName:"Orange",
+            busId:"OR102"
+        };
+
+        let book=function(pname,seatNo)
+        {
+            console.log(`Hey ${pname},you have booked seat in ${this.travelName} travel with seat number ${seatNo}`);
+        };
+
+        let copyfn=book.bind(t1,"Manjit");
+        copyfn(2);
+        copyfn(5);
+    </script>
+    <h1>bind() method</h1>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class D{
+            static n1=10;               //static variable
+            n2=20                       //non-static variable
+
+            static main(){
+                let a=1;                //local variable
+                console.log(a);
+                console.log(D.n1);      //static variable call
+
+                let d1=new D();
+                console.log(d1.n2);     //non-static variable
+                
+            }
+        }
+        D.main();
+    </script>
+</body>
+</html>

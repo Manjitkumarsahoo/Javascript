@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let student={
+            stuid:"jsp101",
+            firstName:"Manjit",
+            lastName:"Sahoo",
+            birthYear:1999,
+            gender:"Male",
+            calAge:function(){                   
+                console.log(this); 
+                
+                let printDetails=()=>{
+                    console.log(this);
+                    console.log(`student name ==>${this.firstName},student birth year==>${this.birthYear}`);
+                }
+                printDetails();
+            }
+        }
+        student.calAge();
+    </script>
+    <h1>This key word</h1>
+</body>
+</html>

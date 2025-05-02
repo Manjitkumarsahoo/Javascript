@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function main()
+        {
+            let n,a,b,c;
+            n=34;a=0;b=1;c=0;
+    
+            for(;true;)   
+            {
+                c=a+b;
+                if(c==n || n==0)
+                {
+                    console.log(`${n} is belongs to fib series`);
+                    break;
+                }
+                if(c>n)
+                {
+                    console.log(`${n} is not belongs to fib series`);
+                    break;
+                }
+                a=b;
+                b=c;
+            }
+        }
+        main();
+    </script>
+</head>
+<body>
+    programe
+</body>
+</html>

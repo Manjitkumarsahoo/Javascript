@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let n=+prompt("enter the number");
+        let res="";
+        let count=1;
+        for(let i=1;i<=n;i++){
+            for(let j=1;j<=n;j++){
+                res += count++ ;
+            }
+            res += "\n";
+        }
+        console.log(res);
+    </script>
+</head>
+<body>
+    <h1>WAP print a pattern number pattern.</h1>
+</body>
+</html>
+
+<!--
+1	2	3	4	5	
+6	7	8	9	10	
+11	12	13	14	15	
+16	17	18	19	20	
+21	22	23	24	25
+-->

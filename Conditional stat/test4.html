@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function main()
+        {
+            let accBal=1000;
+            let amt=Number(prompt("Enter Amount"));
+
+            if(amt<=accBal)
+            {
+                console.log("Withdraw success");
+                accBal=accBal-amt;
+                console.log(`The remaing balance is ${accBal}`);
+            }
+            else
+            {
+                console.log("Invalid Balance");
+                console.log(`Entered amount is ${amt} but available balance is ${accBal}`);
+            }
+        }
+        main();
+    </script>
+</head>
+<body>
+    <h1>java script conditional statement</h1>
+</body>
+</html>

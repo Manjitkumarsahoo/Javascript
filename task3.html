@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body
+        {
+            text-align: center;
+            margin-top: 300px;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="row">
+            <div class="col-4">
+                <span><input type="text" class="input"></span>
+                <select id="dropdown">
+                    <option value="">Manjit</option>
+                    <option value="" id="option"></option>
+                </select>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        let input = document.querySelector('.input');
+        let option = document.querySelector('#option');
+
+        input.addEventListener('input',function(){
+            option.innerHTML = input.value;
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zomato</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background-color: red;
+            padding: 20px;
+            color: white;
+            text-align: left;
+            font-size: 20px;
+            font-weight: bold;
+            padding-left: 20px;
+            border-radius: 10px;
+        }
+        .container {
+            width: 100%;
+            text-align: center;
+            padding: 20px;
+        }
+        .checkout-btn {
+            margin-top: 20px;
+            padding: 20px;
+            background-color:red;
+            color: white;
+            border-radius: 10px;
+            cursor: pointer;
+            width: 10%;
+            margin-right: 100%;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+        img {
+            width: 100px;
+            height: 100px;
+        }
+        .quantity {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .quantity button {
+            padding: 5px 10px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            background-color: violet;
+            color: white;
+        }
+        .quantity span {
+            margin: 0 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">ZOMATO</div>
+    <div class="container">
+        <h2>CART MODULE</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae nihil
+             aperiam expedita nesciunt veniam laborum eveniet minima reprehenderit quasi 
+             eum molestias, in, ut, provident neque qui itaque ipsum nobis quos 
+              vitae adipisci doloremque? Qui, perspiciatis voluptatum facere aut architecto 
+              nesciunt sit corporis quas ut quod deserunt maiores sunt ducimus exercitationem? 
+              Sapiente, hic porro. Voluptatem inventore officia optio aperiam consectetur quam 
+              culpa eius quae accusantium. Voluptatum quidem pariatur vel laboriosam. Iure nisi 
+              corporis, necessitatibus rerum voluptatem laudantium a reprehenderit laborum maxime 
+              est nostrum harum aut architecto suscipit reiciendis rem ipsa eum error consequuntur 
+              minus aperiam voluptas. Iure beatae atque nostrum!</p>
+        <button class="checkout-btn">CHECKOUT</button>
+        <table>
+            <tr>
+                <th>SID</th>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Qty</th>
+                <th>Total Price</th>
+            </tr>
+            <tr>
+                <td>01</td>
+                <td><img src="https://melam.com/wp-content/uploads/2022/12/ambur-biriyani.jpg" alt="Biryani"></td>
+                <td>Biryani</td>
+                <td>₹<span class="price">199.00</span></td>
+                <td>
+                    <div class="quantity">
+                        <button onclick="decreaseQuantity()">-</button>
+                        <span id="qty">1</span>
+                        <button onclick="increaseQuantity()">+</button>
+                    </div>
+                </td>
+                <td>₹<span id="total-price">199.00</span></td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        let quantity = 1;
+
+        function increaseQuantity() {
+            quantity++;
+            document.getElementById("qty").innerText = quantity;
+        }
+
+        function decreaseQuantity() {
+            if (quantity > 1) {
+                quantity--;
+                document.getElementById("qty").innerText = quantity;
+            }
+        }
+    </script>
+</body>
+</html>

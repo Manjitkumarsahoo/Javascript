@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let l =+prompt("Enter Lower limit");
+        let u =+prompt("Enter Upper limit");
+
+        let count=0;
+        for( let i=u;i>=l;i--)
+        {
+            if(isArmstrong(i))
+            {
+                count++;
+                if(count==3)
+                {
+                    console.log(i);
+                }
+            }
+        }
+
+        function len(n){
+            let c=0;
+            while(n>0)
+            {
+                c++;
+                n=Math.trunc(n/10);
+            }
+            return c;
+        }
+
+        function power(b,i)
+        {
+            let prod=1;
+            for(j=1;j<=i;j++)
+            {
+                prod *= b;
+            }
+            return prod;
+        }
+
+        function isArmstrong(n)
+        {
+            let lth=len(n);
+            let sum=0;
+            let temp=n;
+            while(temp>0)
+            {
+                let ld=temp%10;
+                sum += power(ld,lth);
+                temp=Math.trunc(temp/10);
+            }
+            return sum == n;
+        }
+    </script>
+</head>
+<body>
+    Armstrong Number
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subject Marks and Grade</title>
+    <script>
+        function main() {
+            let s1 = 36, s2 = 45, s3 = 72, s4 = 88, s5 = 99;
+            
+            if (s1 < 35 || s2 < 35 || s3 < 35 || s4 < 35 || s5 < 35) {
+                console.log("Fail");
+            } 
+            else {
+        
+                let totalMarks = s1 + s2 + s3 + s4 + s5;
+                let percentage = (totalMarks / 500) * 100;
+                
+                let grade = '';
+                
+                if (percentage > 90) {
+                    grade = "A++";
+                } 
+                else if (percentage >= 80) {
+                    grade = "A";
+                } 
+                else if (percentage >= 70) {
+                    grade = "B++";
+                } 
+                else if (percentage >= 60) {
+                    grade = "B";
+                } 
+                else {
+                    grade = "C";
+                }
+                
+                console.log("Percentage: " + percentage + "%");
+                console.log("Grade: " + grade);
+            }
+        }
+        
+        main();
+    </script>
+</head>
+<body>
+    <h1>Check Marks and Grade</h1>
+</body>
+</html>

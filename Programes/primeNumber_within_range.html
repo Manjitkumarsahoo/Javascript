@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let l = +prompt("Enter Lower Limit");
+        let u = +prompt("Enter Higher Limit");
+
+        for(let i=l;i<=u;i++)
+        {
+            if(isprime(i))
+            {
+                console.log(i);
+            }
+        }
+
+        
+        function isprime(n)
+        {
+            if(n<2)
+            {
+                return false; 
+            }
+            for (let i=2;i<n;i++)
+            {
+                if(n%i === 0)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h1>prime number within a Range</h1>
+</body>
+</html>

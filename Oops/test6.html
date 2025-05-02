@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function student(id,sname,birthyear)
+        {
+            this.id = id;
+            this.sname = sname;
+            this.birthyear = birthyear;
+        }
+
+        let s1 = new student(101,"Manjit",1999);
+        console.log(s1);
+
+        let s2 = new student(102,"Baya",2002);
+        console.log(s2);
+        
+        let s3 = null;
+
+        console.log(s1 instanceof student);
+        console.log(s2 instanceof student);
+        console.log(s3 instanceof student);
+        
+
+        
+    </script>
+</body>
+</html>

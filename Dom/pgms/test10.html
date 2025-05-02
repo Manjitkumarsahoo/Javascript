@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body
+        {
+            height: 100vh;
+        }
+        #grand-parent{
+            height: 300px;
+            width: 300px;
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 2px solid black;
+        }
+        #parent{
+            height: 200px;
+            width: 200px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id="grand-parent">
+        <div id="parent">
+            <button>red</button><button>yellow</button><button>green</button>
+        </div>
+    </div>
+
+    <script>
+        let divTag=document.getElementById('parent');
+        divTag.addEventListener('click',(e)=>{
+            divTag.style.backgroundColor=e.target.innerText;
+        });
+    </script>
+</body>
+</html>

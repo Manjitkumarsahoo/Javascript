@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let l= +prompt("Enter the lower limit");
+        let u= +prompt("Enter the higher limit");
+
+        for (let i=l;i<=u;i++){
+
+            if(isStrong(i)){
+
+                console.log(i);
+
+            }
+
+        }
+
+        function fact(num){
+            let prod=1;
+            for (j=1;j<=num;j++){
+                prod *= j;
+            }
+            return prod
+        }
+
+        function isStrong(n){
+
+            let sum=0;
+            let temp=n;
+
+            while(n>0){
+
+                sum +=fact(n%10);
+                n=Math.trunc(n/10);
+            }
+            return temp==sum;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let t1={
+            travelName:"VPL",
+            busId:"VR101"
+        };
+
+        let t2={
+            travelName:"Orange",
+            busId:"OR102"
+        };
+
+        let book=function(pname,seatNo)
+        {
+            console.log(`Hey ${pname},you have booked seat in ${this.travelName} travel with seat number ${seatNo}`);
+        };
+
+        //book("manjit",23);
+        //book.call(t1,"Manjit",25);
+        //book.call(t2,"Manjit",25);
+
+        let passenger=["Baya",23];
+
+        book.apply(t1,["Manjit",25]);
+        book.apply(t1,passenger);
+        book.apply(t2,passenger);
+
+    </script>
+    <h1>apply() method</h1>
+</body>
+</html>

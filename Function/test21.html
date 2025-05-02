@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function studentDetails(id,sname)
+        {
+            var course="MERN";
+            let inst="Jspider";
+            const branch="Marathahalli"
+
+            function printDetails()
+            {
+                console.log(`student name=>${sname},Institute name=>${inst}`);
+            }
+
+            let greeting= function()
+            {
+                console.log(`Hi${sname} welcome to ${inst}`);
+            }
+
+            var wishing=()=>
+            {
+                console.log(`Hi ${sname} happy birthday`);
+            }
+            printDetails();
+            greeting();
+            wishing();
+        }
+        studentDetails(101,"Manjit");
+    </script>
+    <h1>JRE</h1>
+</body>
+</html>

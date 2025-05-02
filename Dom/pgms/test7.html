@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="display-data">
+        
+    </div>
+    <script>
+        let htmlcode = `<h1>
+            <span style="color: red;">Good</span>
+            <span style="color: blue;">Evening</span>
+        </h1>`;
+
+        let n1=10;
+
+        console.log(htmlcode,typeof htmlcode);
+
+        let displayTag = document.getElementById('display-data');
+        //displayTag.textContent=htmlcode;
+        //displayTag.innerText=htmlcode;
+        displayTag.innerHTML=htmlcode;
+        
+    </script>
+</body>
+</html>

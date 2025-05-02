@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="one">This is header one</h1>
+    <h1>This is Header two</h1>
+    <div>
+        <h2>Course:-</h2>
+        <ol>
+            <li class="abc">Java Script</li>
+            <li>React js</li>
+            <li class="abc">node js</li>
+        </ol>
+    </div>
+<script>
+    let htmlDoc = document.documentElement;
+    console.log("htmlDoc");
+
+    let h1Tag = document.body.h1;
+    console.log(h1Tag);
+    
+    //Document Object Method
+    h1Tag = document.getElementById('one');
+    console.log(h1Tag);
+
+    let listTag = document.getElementsByTagName('li');
+    console.log(listTag);
+
+    listTagClass = document.getElementsByClassName('abc');
+    console.log(listTagClass);
+
+    //Based on css selector
+
+    h1Tag = document.querySelector('#one');
+    console.log(h1Tag);
+
+    listTag = document.querySelector('li');
+    console.log(listTag);
+
+    listTagClass = document.querySelector('.abc');
+    console.log(listTagClass);
+
+    listTag = document.querySelectorAll('li');
+    console.log(listTag);
+    
+</script>
+</body>
+</html>

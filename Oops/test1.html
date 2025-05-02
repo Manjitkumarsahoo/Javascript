@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function main(){
+            console.log("Main starts");
+            console.log(this);
+        }
+        let m1 = new main();
+        console.log(m1);
+       
+        let m2 = new main();
+        console.log(m2);
+        
+
+    </script>
+</body>
+</html>

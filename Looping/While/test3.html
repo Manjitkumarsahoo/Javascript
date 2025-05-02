@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let n= +prompt("enter a number");
+        function main()
+        {
+            let sum=0;
+            while(n)
+            {
+                sum+=n%10;
+                n=Math.trunc(n/10);
+            }
+            console.log(sum);
+            
+        }
+        main()
+    </script>
+</head>
+<body>
+    While loop
+</body>
+</html>

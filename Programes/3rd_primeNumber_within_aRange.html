@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let lowerlimit = +prompt("Enter lower limit");
+        let upperlimit = +prompt("Enter Upper limit");
+
+        let sl=0;
+        for(let i=lowerlimit;i<=upperlimit;i++)
+        {
+            if(isprime(i))
+            {
+                sl++;
+                if(sl==3)
+                {
+                    console.log(i);
+                }
+            }
+        }
+        function isprime(n)
+        {
+            if(n<2)
+            {
+                return false; 
+            }
+            for (let i=2;i<n;i++)
+            {
+                if(n%i === 0)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+    </script>
+</head>
+<body>
+    <h1>2nd largest prime number within a range</h1>
+</body>
+</html>

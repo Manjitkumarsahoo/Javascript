@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let s1={
+            id:101,
+            firstname:"kiran",
+            lastname:"kumar",
+            birthyear:2000,
+            age:24
+        };
+        console.log(s1,typeof s1);
+
+        let stuName=s1.firstname;
+        let stuAge=s1.age;
+        console.log(`Student name==> ${stuName}, Student Age==>${stuAge}`);
+
+        stuName=s1["firstname"];
+        stuAge=s1["age"];
+        console.log(`Student name==> ${stuName}, Student Age==>${stuAge}`);
+    </script>
+</head>
+<body>
+    <h1>Object</h1>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function student(id,sname,birthyear){
+            this.id = id;
+            this.sname = sname;
+            this.birthyear = birthyear;
+        }
+        student.prototype.calcAge = function(){
+            let d1 = new Date();
+            let currentyear = d1.getFullYear();
+            let age = currentyear - this.birthyear;
+
+            console.log("Age =" +age);
+            
+        }
+
+        student.prototype.city = "Bangalor";
+
+        let s1 = new student(101,"manjit",1999);
+        console.log(s1);
+        s1.calcAge();
+        console.log(s1.city);
+
+        let s2 = new student(102,"Baya",2002);
+        console.log(s2);
+        console.log(s2.city);
+        s2.calcAge();
+        
+        
+    </script>
+</body>
+</html>

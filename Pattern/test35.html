@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse Triangle</title>
+    <script>
+        let n = 5;
+        let res = "";
+        let sp = n - 1;
+
+        for (let i = n; i >= 1; i--) {
+            // Adding spaces
+            for (let j = 1; j <= sp; j++) {
+                res += " ";
+            }
+            // Adding numbers from i to n
+            for (let j = i; j <= n; j++) {
+                res += j;
+            }
+            res += "\n";
+            sp--;
+        }
+        console.log(res);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
+
+
+<!-- 
+    5
+   45
+  345
+ 2345
+12345 
+-->

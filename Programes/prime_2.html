@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function main()
+        {
+            let n= +prompt("Enter the number");
+            let c=0;
+            if(n<2)
+            {
+                console.log(`${n} is not a prime number`);
+                return; 
+            }
+            for (i=2;i<=Math.trunc(n/2);i++)
+            {
+                if(n%i==0)
+                {
+                    c++;
+                    console.log(`${n} is not a prime number`);
+                    return;
+                }
+            }
+            console.log(`${n} is a prime number`);
+        }
+        main();
+    </script>
+</head>
+<body>
+    <h1>prime number</h1>
+</body>
+</html>

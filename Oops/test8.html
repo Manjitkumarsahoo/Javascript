@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         function person(id,name,birthyear){
+            this.id = id;
+            this.name = name;
+            this.birthyear = birthyear;
+         }
+
+         function employee(id,name,birthyear,desg,sal){
+            person.call(id,name,birthyear);
+            this.desg =desg;
+            this.sal = sal;
+         }
+
+         let s1 = new employee(101,"Manjit",1999,"Dev",100000);
+         console.log(s1);
+         
+         let e1 = new employee(102,"Baya",2000,"Test",10000);
+         console.log(e1);
+         
+    </script>
+</body>
+</html>

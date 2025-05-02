@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let s1={
+            stuid:"jsp101",
+            firstName:"Manjit",
+            lastName:"Sahoo",
+            birthYear:1999,
+        };
+
+        let calcAge=function(){
+            console.log(this);
+        }
+
+        calcAge.call(s1);
+        calcAge();
+    </script>
+    <h1>call() method</h1>
+</body>
+</html>

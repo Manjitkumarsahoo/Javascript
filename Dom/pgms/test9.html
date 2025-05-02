@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body
+        {
+            height: 100vh;
+        }
+        #grand-parent{
+            height: 300px;
+            width: 300px;
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: red;
+        }
+        #parent{
+            height: 200px;
+            width: 200px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color:yellow;
+        }
+        #child{
+            height: 100px;
+            width: 100px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color:green;
+        }
+    </style>
+</head>
+<body>
+    <div id="grand-parent">
+        <div id="parent">
+            <div id="child">
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let gp=document.getElementById('grand-parent');
+        let p=document.getElementById('parent');
+        let c=document.getElementById('child');
+
+        gp.addEventListener('click',()=>{
+            console.log("red Light");
+        })
+
+        p.addEventListener('click',()=>{
+            console.log("yellow light");
+        })
+
+        c.addEventListener('click',()=>{
+            console.log("green light");
+        })
+    </script>
+</body>
+</html>
