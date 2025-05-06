@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form onsubmit="count(event)">
+        <label for="input">String</label>
+        <input type="text" id="input" name="input" placeholder="Enter a string">
+        <button type="submit">Submit</button>
+    </form>
+    <div>
+        <p>Cap Count: <span id="Ccount">0</span></p>
+        <p>Small Count: <span id="Scount">0</span></p>
+        <p>Number Count: <span id="Ncount">0</span></p>
+        <p>Symbol Count: <span id="sybcount">0</span></p>
+    </div>
+
+    <script>
+        function count(e) {
+            e.preventDefault();
+
+            const input = document.getElementById("input").value
+            let Ccount = 0;
+            let Scount = 0;
+            let Ncount = 0;
+            let sybcount = 0
+
+            for (let i = 0; i < input.length; i++) {
+                const char = input[i];
+
+                if (char >= "A" && char <= "Z") {
+                    Ccount++;
+                } else if (char >= "a" && char <= "z") {
+                    Scount++;
+                } else if (char >= '1' && char <= '9') {
+                    Ncount++;
+                } else {
+                    sybcount++;
+                }
+            }
+
+            document.getElementById("Ccount").textContent = Ccount;
+            document.getElementById("Scount").textContent = Scount;
+            document.getElementById("Ncount").textContent = Ncount;
+            document.getElementById("sybcount").textContent = sybcount;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form onsubmit="count(event)">
+        <label for="input">String</label>
+        <input type="text" id="input" name="input" placeholder="Enter a string">
+        <button type="submit">Submit</button>
+    </form>
+    <div>
+        <p>Vowel Count: <span id="Vcount">0</span></p>
+        <p>Consonant Count: <span id="Ccount">0</span></p>
+    </div>
+
+    <script>
+        function count(e) {
+            e.preventDefault();
+
+            const input = document.getElementById("input").value
+            let Vcount = 0;
+            let Ccount = 0;
+
+            for (let i = 0; i < input.length; i++) {
+                const char = input[i].toUpperCase()
+                if (char >= 'A' && char <= 'Z') {
+                    if (char === "A" || char === "E" || char === "I" || char === "O" || char === "U") {
+                        Vcount++;
+                    } else {
+                        Ccount++
+                    }
+                }
+            }
+
+            document.getElementById("Vcount").textContent = Vcount;
+            document.getElementById("Ccount").textContent = Ccount;
+        }
+    </script>
+</body>
+
+</html>
