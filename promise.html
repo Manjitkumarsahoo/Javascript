@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //task 1
+        const promiseOne = new Promise(function(resolve,reject){
+            setTimeout(function(){
+                console.log("Aysc task is done");
+                resolve();
+            },1000)
+        })
+
+        promiseOne.then(function(){
+            console.log("Promise sounsumed")
+        })
+
+
+        //task2
+
+        new Promise(function(resolve,reject){
+            setTimeout(function(){
+                console.log("Aysn task 2");
+                resolve()
+            },1000)
+        }).then(function(){
+            console.log("Async task 2 complete");
+            
+        })
+
+        //Task3
+
+        const promiseThree = new Promise(function(resolve,reject){
+            setTimeout(function(){
+                resolve({username:"Manjit",email:"abc@gmail.com"})
+            },1000)
+        })
+
+        promiseThree.then(function(user){
+            console.log(user);
+        })
+
+        //Task4
+
+        const promiseFour = new Promise(function(resolve,reject){
+            setTimeout(function(){
+                
+                let error = false
+                if(!error){
+                    resolve({username:"MKS",password:123})
+                }
+                else
+                {
+                    reject("ERROR:Something went wrong");
+                }
+            },1000)
+        })
+
+        promiseFour
+        .then(function(user){
+            console.log(user);
+            return user.username            
+        })
+        .then(function(username){
+            console.log(username);
+        })
+        .catch(function(error){
+            console.log(error);
+        })
+
+        //TASK5
+
+        const promiseFive = new Promise(function(resolve,reject){
+            setTimeout(function(){
+                
+                let error = false
+                if(!error){
+                    resolve({username:"JS",password:123})
+                }
+                else
+                {
+                    reject("ERROR:Something went wrong");
+                }
+            },1000)
+        })
+
+        async function CounsumePromiseFive() {
+            try {
+                const response = await promiseFive
+                console.log(response);
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        CounsumePromiseFive()
+    </script>
+</body>
+</html>
