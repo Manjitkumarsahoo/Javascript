@@ -1,4 +1,4 @@
-String.prototype.mytrim = function() {
+String.prototype.mytrim = function () {
     let res = "";
     let start = 0;
     let end = this.length - 1;
@@ -17,13 +17,15 @@ String.prototype.mytrim = function() {
         }
     }
 
-    
+    // Handle all spaces case
+    if (start > end) return "";
+
     for (let i = start; i <= end; i++) {
         res += this[i];
     }
 
     return res;
 };
-
-let str = "   js is easy   ";
-console.log(str.mytrim()); 
+console.log("   js is easy   ".mytrim()); // "js is easy"
+console.log("       ".mytrim());          // ""
+console.log("noTrim".mytrim());          // "noTrim"
