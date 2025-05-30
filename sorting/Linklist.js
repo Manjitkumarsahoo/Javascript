@@ -1,7 +1,8 @@
 class Node {
-    constructor(ele, next) {
+    constructor(ele, next,prev) {
         this.ele = ele;
         this.next = next;
+        this.prev = prev
     }
 }
 
@@ -116,6 +117,24 @@ class LinkList {
         return res;
     }
 
+    reverse() {
+        if (this.size == 0) {
+            return "List is empty"
+        }
+
+        let curr = this.head;
+        let prev = null
+        let next = null
+
+        while (curr) {
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        this.head = prev;
+    }
+
 
 }
 
@@ -126,4 +145,6 @@ ll.add(30)
 ll.add(40)
 //console.log(ll.size);
 
-console.log(ll.get(2));
+//console.log(ll.get(2));
+ll.reverse()
+ll.print()

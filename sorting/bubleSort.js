@@ -9,5 +9,6 @@ function bubleSort(arr) {
     return arr;
 }
 
-let arr = [2, 6, 4, 7, 9, 5, 1]
+//let arr = [2, 6, 4, 7, 9, 5, 1]
+let arr=["banana","apple","cherry"]
 console.log(bubleSort(arr));
